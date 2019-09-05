@@ -19,6 +19,6 @@ export class FakeApiService implements InMemoryDbService {
       { id: 6, name: 'Collaboration', description: 'IT professionals often have to provide tech solutions for people who aren’t as savvy. They have to demonstrate leadership at all levels of projects, and with many different groups.', pic: 'https://cdn.pixabay.com/photo/2018/10/04/13/55/note-3723689_960_720.jpg', likes: 1 }
     ];
 
-    return { skills };
+    return {skills};
   }
 }

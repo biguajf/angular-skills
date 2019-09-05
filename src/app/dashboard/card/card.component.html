@@ -8,8 +8,25 @@
       {{card.description}}
     </p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE {{card.likes}}</button>
-    <button mat-button>SHARE</button>
+
+  <mat-card-actions >
+    <ng-container *ngIf="card.likes == 0 ">
+      <button *ngIf="showSpinner" class="button" mat-button><mat-spinner [diameter]="20"></mat-spinner></button>
+      <button *ngIf="!showSpinner" class="button" mat-button (click)='onLike(card)'>LIKE</button>
+    </ng-container>    
+    <ng-container *ngIf="card.likes >0 && card.likes < 5">
+      <button *ngIf="showSpinner" class="button" mat-button><mat-spinner [diameter]="20"></mat-spinner></button>
+      <button *ngIf="!showSpinner" id="firstLike" class="button" mat-button (click)='onLike(card)' matBadge="{{card.likes}}" matBadgeSize="small">LIKE</button>
+    </ng-container>
+    <ng-container *ngIf="card.likes >= 5 && card.likes < 10 ">
+      <button *ngIf="showSpinner" class="button" mat-button><mat-spinner [diameter]="20"></mat-spinner></button>
+      <button *ngIf="!showSpinner" id="secondLike" class="button" mat-button (click)='onLike(card)' matBadge="{{card.likes}}" matBadgeSize="small">LIKE</button>
+    </ng-container>
+    <ng-container *ngIf="card.likes >= 10">
+      <button *ngIf="showSpinner" class="button" mat-button><mat-spinner [diameter]="20"></mat-spinner></button>
+      <button *ngIf="!showSpinner" id="thirdLike" class="button" mat-button (click)='onLike(card)' matBadge="{{card.likes}}" matBadgeSize="small">LIKE</button>
+    </ng-container>
+    <button class="button" mat-button (click)='onShare()'>SHARE</button>
   </mat-card-actions>
+
 </mat-card>

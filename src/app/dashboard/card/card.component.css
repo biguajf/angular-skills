@@ -1,3 +1,53 @@
 .example-card {
-    max-width: 400px;
+ 	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 20px;
   }
+
+.example-card img{
+	height: 300px; 
+}
+
+.example-card:hover{
+	-webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 999;
+}
+
+mat-card-content{
+	height: 50px;
+	overflow-y: auto;
+}
+
+.button {
+  color: black;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#firstLike .mat-badge-content{ 
+  background-color: #BDBDBD;
+  margin-right: 15px;
+}
+
+#secondLike .mat-badge-content{ 
+  background-color: #1E88E5;
+  margin-right: 15px;
+}
+
+#thirdLike .mat-badge-content{ 
+  background-color: #FDD835;
+  margin-right: 15px;
+}
+
+mat-spinner{
+    position: relative;
+}
