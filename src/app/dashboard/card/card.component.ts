@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { SkillsService } from '../../skills.service';
 
 
 @Component({
